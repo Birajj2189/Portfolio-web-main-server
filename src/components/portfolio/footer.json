@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_portfolio_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "layout",
+    "description": "Footer section content"
+  },
+  "options": {},
+  "attributes": {
+    "copyrightName": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

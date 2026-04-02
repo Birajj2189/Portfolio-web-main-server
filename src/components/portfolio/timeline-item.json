@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_portfolio_timeline_items",
+  "info": {
+    "displayName": "Timeline Item",
+    "icon": "calendar",
+    "description": "A single entry in the journey timeline"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

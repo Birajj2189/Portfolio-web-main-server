@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_portfolio_projects",
+  "info": {
+    "displayName": "Project",
+    "icon": "folder",
+    "description": "A single project entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "techStack": {
+      "type": "json",
+      "required": true
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "demoUrl": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["COMPLETED", "IN_PROGRESS", "LIVE"],
+      "required": true,
+      "default": "COMPLETED"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

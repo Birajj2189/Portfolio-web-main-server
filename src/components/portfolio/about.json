@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_portfolio_abouts",
+  "info": {
+    "displayName": "About",
+    "icon": "user",
+    "description": "About section content"
+  },
+  "options": {},
+  "attributes": {
+    "bio": {
+      "type": "blocks",
+      "required": true
+    },
+    "techStack": {
+      "type": "json",
+      "required": true
+    },
+    "skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.skill",
+      "required": true
+    }
+  }
+}

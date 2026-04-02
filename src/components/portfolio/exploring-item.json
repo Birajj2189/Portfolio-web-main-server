@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_portfolio_exploring_items",
+  "info": {
+    "displayName": "Exploring Item",
+    "icon": "search",
+    "description": "A topic currently being explored"
+  },
+  "options": {},
+  "attributes": {
+    "topic": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

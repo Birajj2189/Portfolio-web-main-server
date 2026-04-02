@@ -25,6 +25,7 @@ services:
     volumes:
       - ./src:/app/src
       - ./config:/app/config
+      - ./data:/app/data
       - strapi-uploads:/app/public/uploads
     depends_on:
       postgres:
@@ -44,6 +45,7 @@ services:
       - "${DATABASE_PORT:-5434}:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}"]
       interval: 10s
@@ -51,6 +53,27 @@ services:
       retries: 5
     networks:
       - portfolio-network
+
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile.dev
+    container_name: portfolio-auth-service
+    restart: unless-stopped
+    env_file: ./auth-service/.env
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@postgres:5432/portfolio_auth?schema=public
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - portfolio-network
+    command: >
+      sh -c "npx prisma migrate deploy && npm run dev"
 
   pgadmin:
     image: dpage/pgadmin4:latest

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_portfolio_education_items",
+  "info": {
+    "displayName": "Education Item",
+    "icon": "book",
+    "description": "A single education entry for the resume"
+  },
+  "options": {},
+  "attributes": {
+    "institution": {
+      "type": "string",
+      "required": true
+    },
+    "degree": {
+      "type": "string",
+      "required": true
+    },
+    "period": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_portfolio_gallery_tiles",
+  "info": {
+    "displayName": "Gallery Tile",
+    "icon": "landscape",
+    "description": "A single bento grid tile with image, caption, tag and size"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "string",
+      "required": false
+    },
+    "tag": {
+      "type": "string",
+      "required": false
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": ["1x1", "1x2", "2x1", "2x2"],
+      "required": true,
+      "default": "1x1"
+    },
+    "order": {
+      "type": "integer",
+      "required": false
+    }
+  }
+}

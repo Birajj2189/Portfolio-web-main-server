@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolio",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio",
+    "description": "All portfolio content in one single type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.hero",
+      "required": true
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.about",
+      "required": true
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.project",
+      "required": false
+    },
+    "journey": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.journey",
+      "required": true
+    },
+    "resume": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.resume",
+      "required": true
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.contact",
+      "required": true
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.footer",
+      "required": true
+    }
+  }
+}

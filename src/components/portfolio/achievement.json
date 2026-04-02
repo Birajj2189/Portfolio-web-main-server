@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_portfolio_achievements",
+  "info": {
+    "displayName": "Achievement",
+    "icon": "star",
+    "description": "A single achievement or milestone"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

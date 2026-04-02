@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_portfolio_resumes",
+  "info": {
+    "displayName": "Resume",
+    "icon": "file",
+    "description": "Resume section with experience, education and stats"
+  },
+  "options": {},
+  "attributes": {
+    "resumeFileUrl": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.experience-item",
+      "required": true
+    },
+    "education": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.education-item",
+      "required": true
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.stat-item",
+      "required": true
+    }
+  }
+}

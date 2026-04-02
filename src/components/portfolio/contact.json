@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_portfolio_contacts",
+  "info": {
+    "displayName": "Contact",
+    "icon": "envelop",
+    "description": "Contact section content"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "availability": {
+      "type": "string",
+      "required": true
+    },
+    "responseTime": {
+      "type": "string",
+      "required": true
+    },
+    "quickInfoText": {
+      "type": "text",
+      "required": true
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "linkedinUrl": {
+      "type": "string"
+    },
+    "twitterUrl": {
+      "type": "string"
+    }
+  }
+}

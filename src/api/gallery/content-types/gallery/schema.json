@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "gallery",
+  "info": {
+    "singularName": "gallery",
+    "pluralName": "galleries",
+    "displayName": "Gallery",
+    "description": "Bento grid photo gallery with tag filters"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.gallery-header",
+      "required": true
+    },
+    "tiles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.gallery-tile",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_portfolio_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "feather",
+    "description": "Hero section content"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "text",
+      "required": true
+    },
+    "available": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "ctaPrimaryLabel": {
+      "type": "string"
+    },
+    "ctaSecondaryLabel": {
+      "type": "string"
+    }
+  }
+}

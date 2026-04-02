@@ -1,4 +1,9 @@
 ############################
+# Auth Service (separate container, must not be included in Strapi image)
+############################
+auth-service
+
+############################
 # Dependencies & Build
 ############################
 node_modules

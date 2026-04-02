@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_portfolio_skills",
+  "info": {
+    "displayName": "Skill",
+    "icon": "puzzle",
+    "description": "A single skill entry with icon and color"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "hero": {
+    "name": "Biraj Mahanta",
+    "role": "Software Development Engineer",
+    "tagline": "Building digital experiences with clean code and modern tools.",
+    "available": true,
+    "ctaPrimaryLabel": "Explore My Space",
+    "ctaSecondaryLabel": "View Projects"
+  },
+  "about": {
+    "bio": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "text",
+            "text": "I'm a passionate software engineer who loves building scalable backend systems and intuitive frontends. I enjoy solving real-world problems through code."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "text",
+            "text": "When I'm not coding, I'm exploring new technologies, contributing to open source, or writing about what I've learned."
+          }
+        ]
+      }
+    ],
+    "techStack": ["TypeScript", "Node.js", "React", "Next.js", "PostgreSQL", "Docker"],
+    "skills": [
+      { "name": "TypeScript", "icon": "Code2", "color": "text-chart-1" },
+      { "name": "React", "icon": "Layout", "color": "text-chart-2" },
+      { "name": "Next.js", "icon": "Globe", "color": "text-chart-3" },
+      { "name": "Node.js", "icon": "Server", "color": "text-chart-4" },
+      { "name": "PostgreSQL", "icon": "Database", "color": "text-chart-5" },
+      { "name": "Docker", "icon": "Container", "color": "text-primary" }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Portfolio Backend",
+      "description": "A production-ready backend built with Node.js, Express, Strapi, and PostgreSQL. Features JWT auth, RBAC, and a clean REST API.",
+      "techStack": ["Node.js", "Strapi", "PostgreSQL", "Docker"],
+      "githubUrl": "https://github.com/",
+      "demoUrl": "#",
+      "status": "COMPLETED",
+      "order": 1
+    },
+    {
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce application with product catalog, cart, checkout flow, and payment integration.",
+      "techStack": ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+      "githubUrl": "https://github.com/",
+      "demoUrl": "#",
+      "status": "COMPLETED",
+      "order": 2
+    },
+    {
+      "title": "Real-Time Chat App",
+      "description": "WebSocket-based chat application supporting rooms, direct messages, and presence detection.",
+      "techStack": ["Node.js", "Socket.io", "React", "Redis"],
+      "githubUrl": "https://github.com/",
+      "demoUrl": "#",
+      "status": "IN_PROGRESS",
+      "order": 3
+    }
+  ],
+  "journey": {
+    "timeline": [
+      {
+        "year": "2024",
+        "title": "Senior Software Engineer",
+        "description": "Leading backend development for a SaaS product. Architecting microservices and mentoring junior engineers.",
+        "icon": "Rocket",
+        "color": "text-primary"
+      },
+      {
+        "year": "2022",
+        "title": "Software Engineer",
+        "description": "Joined a product startup. Built REST APIs, integrated third-party services, and improved system performance by 40%.",
+        "icon": "Code2",
+        "color": "text-chart-1"
+      },
+      {
+        "year": "2021",
+        "title": "Graduate",
+        "description": "Graduated with a B.Tech in Computer Science. Started contributing to open source projects.",
+        "icon": "GraduationCap",
+        "color": "text-chart-2"
+      }
+    ],
+    "exploring": [
+      {
+        "topic": "AI/ML Integration",
+        "description": "Exploring LLM APIs, prompt engineering, and integrating AI into product features."
+      },
+      {
+        "topic": "Distributed Systems",
+        "description": "Studying Kafka, distributed transactions, and eventual consistency patterns."
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Open Source Contributor",
+        "description": "Contributed to several Node.js and TypeScript open source libraries with merged PRs."
+      },
+      {
+        "title": "AWS Certified Developer",
+        "description": "Passed the AWS Certified Developer Associate exam in 2023."
+      }
+    ]
+  },
+  "resume": {
+    "resumeFileUrl": "",
+    "experience": [
+      {
+        "company": "Tech Corp",
+        "role": "Senior Software Engineer",
+        "period": "2024 – Present",
+        "description": "Leading API development, mentoring team members, and driving architectural decisions for a B2B SaaS product.",
+        "skills": ["Node.js", "TypeScript", "PostgreSQL", "Docker", "AWS"]
+      },
+      {
+        "company": "Startup Inc",
+        "role": "Software Engineer",
+        "period": "2022 – 2024",
+        "description": "Built and maintained REST APIs, integrated payment gateways, and improved backend performance.",
+        "skills": ["Express", "PostgreSQL", "Redis", "React"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "XYZ University",
+        "degree": "B.Tech in Computer Science",
+        "period": "2017 – 2021",
+        "description": "Graduated with distinction. Focused on algorithms, data structures, and software engineering."
+      }
+    ],
+    "stats": [
+      { "label": "Years Experience", "value": "3+", "color": "text-primary" },
+      { "label": "Projects Shipped", "value": "20+", "color": "text-chart-1" },
+      { "label": "Happy Clients", "value": "10+", "color": "text-chart-2" }
+    ]
+  },
+  "contact": {
+    "email": "hello@biraj.dev",
+    "city": "Bangalore",
+    "availability": "Available for work",
+    "responseTime": "Usually within 24 hours",
+    "quickInfoText": "I'm open to full-time roles, freelance projects, and open source collaborations. Feel free to reach out — I'd love to connect.",
+    "githubUrl": "https://github.com/",
+    "linkedinUrl": "https://linkedin.com/in/",
+    "twitterUrl": ""
+  },
+  "footer": {
+    "copyrightName": "Biraj Mahanta",
+    "tagline": "Built with Next.js & Tailwind CSS"
+  }
+}

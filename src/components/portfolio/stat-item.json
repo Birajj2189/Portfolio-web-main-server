@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_portfolio_stat_items",
+  "info": {
+    "displayName": "Stat Item",
+    "icon": "chartBubble",
+    "description": "A single resume stat e.g. Years Experience: 3+"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

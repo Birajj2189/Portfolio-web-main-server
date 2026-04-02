@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_portfolio_journeys",
+  "info": {
+    "displayName": "Journey",
+    "icon": "map",
+    "description": "Journey section with timeline, exploring and achievements"
+  },
+  "options": {},
+  "attributes": {
+    "timeline": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.timeline-item",
+      "required": true
+    },
+    "exploring": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.exploring-item",
+      "required": true
+    },
+    "achievements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.achievement",
+      "required": true
+    }
+  }
+}

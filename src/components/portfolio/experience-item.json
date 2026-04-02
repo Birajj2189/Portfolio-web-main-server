@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_portfolio_experience_items",
+  "info": {
+    "displayName": "Experience Item",
+    "icon": "briefcase",
+    "description": "A single work experience entry for the resume"
+  },
+  "options": {},
+  "attributes": {
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "period": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "skills": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
