@@ -1,0 +1,64 @@
+services:
+  # ─── Strapi CMS ───────────────────────────────────────────────────────────────
+  - type: web
+    name: portfolio-strapi
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: .
+    buildCommand: npm install --omit=optional && npm install sharp && npm run build
+    startCommand: npm run start
+    healthCheckPath: /_health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: DATABASE_CLIENT
+        value: postgres
+      # Set these in the Render dashboard — do not commit secrets
+      - key: DATABASE_URL
+        sync: false
+      - key: APP_KEYS
+        sync: false
+      - key: API_TOKEN_SALT
+        sync: false
+      - key: ADMIN_JWT_SECRET
+        sync: false
+      - key: TRANSFER_TOKEN_SALT
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+
+  # ─── Auth Service (Express + Prisma) ──────────────────────────────────────────
+  - type: web
+    name: portfolio-auth-service
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: auth-service
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npx prisma migrate deploy && npm run start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Set these in the Render dashboard — do not commit secrets
+      - key: DATABASE_URL
+        sync: false
+      - key: ACCESS_TOKEN_SECRET
+        sync: false
+      - key: REFRESH_TOKEN_SECRET
+        sync: false
+      - key: COOKIE_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: ACCESS_TOKEN_EXPIRES_IN
+        value: 15m
+      - key: REFRESH_TOKEN_EXPIRES_IN
+        value: 7d

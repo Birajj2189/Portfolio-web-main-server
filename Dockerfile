@@ -47,7 +47,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 RUN groupadd --system --gid 1001 strapi && \
-    useradd --system --uid 1001 --gid strapi strapi
+    useradd --system --uid 1001 --gid strapi --create-home strapi
 
 # dist/ contains compiled config/, src/, and extensions/ — the only thing
 # Strapi production needs. Raw .ts source files must NOT be copied here
