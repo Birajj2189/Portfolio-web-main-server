@@ -27,8 +27,11 @@ export default ({ env }) => ({
   },
   "users-permissions": {
     config: {
+      // Production requires jwtSecret; plugin throws if missing when NODE_ENV=production.
+      // Prefer JWT_SECRET; fall back to ADMIN_JWT_SECRET so Render setups with one secret still boot.
+      jwtSecret: env('JWT_SECRET', env('ADMIN_JWT_SECRET')),
       jwt: {
-        expiresIn: env("JWT_EXPIRES_IN", "7d"),
+        expiresIn: env('JWT_EXPIRES_IN', '7d'),
       },
     },
   },

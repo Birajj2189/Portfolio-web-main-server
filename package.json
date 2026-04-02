@@ -9,7 +9,7 @@
     "deploy": "strapi build && strapi start",
     "strapi": "strapi",
     "docs:generate": "typedoc",
-    "prepare": "node -e \"if(process.env.NODE_ENV !== 'production') require('child_process').execSync('husky', {stdio: 'inherit'})\""
+    "prepare": "node -e \"const e=process.env; if(e.NODE_ENV==='production'||e.CI||e.RENDER==='true'||e.RENDER_SERVICE_ID||e.SKIP_HUSKY==='1') process.exit(0); require('child_process').execSync('husky',{stdio:'inherit'})\""
   },
   "dependencies": {
     "@strapi/database": "5.41.1",
