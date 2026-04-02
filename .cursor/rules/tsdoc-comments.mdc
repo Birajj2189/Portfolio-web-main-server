@@ -1,0 +1,69 @@
+---
+description: Always write TSDoc comments for all TypeScript functions, classes, and interfaces
+globs: **/*.ts,**/*.tsx
+alwaysApply: false
+---
+
+# TSDoc Documentation Standards
+
+Always add TSDoc comments to every exported function, class, method, and interface.
+
+## Functions & Methods
+
+```typescript
+// ✅ GOOD
+/**
+ * Retrieves a single article by its slug.
+ *
+ * @param slug - The unique URL-friendly identifier for the article
+ * @returns The article document, or `null` if not found
+ * @throws {NotFoundError} When the article does not exist in the database
+ */
+export async function getArticleBySlug(slug: string): Promise<Article | null> {}
+
+// ❌ BAD — no TSDoc
+export async function getArticleBySlug(slug: string) {}
+```
+
+## Interfaces & Types
+
+```typescript
+// ✅ GOOD
+/**
+ * Represents the shape of a portfolio project entry.
+ */
+export interface Project {
+  /** Unique identifier */
+  id: number;
+  /** Display title shown on the portfolio page */
+  title: string;
+  /** ISO 8601 date string of when the project was published */
+  publishedAt: string;
+}
+```
+
+## Classes
+
+```typescript
+// ✅ GOOD
+/**
+ * Service responsible for managing portfolio project data.
+ */
+export class ProjectService {
+  /**
+   * Creates a new project entry.
+   *
+   * @param data - The project creation payload
+   * @returns The newly created project
+   */
+  async create(data: CreateProjectDto): Promise<Project> {}
+}
+```
+
+## Rules
+
+- Always include `@param` for every parameter
+- Always include `@returns` describing the return value
+- Always include `@throws` if the function can throw
+- Use present tense: "Retrieves", "Creates", "Deletes"
+- Keep the summary line (first line) under 80 characters

@@ -1,0 +1,58 @@
+############################
+# Dependencies & Build
+############################
+node_modules
+npm-debug.log
+yarn-error.log
+.npm
+dist
+build
+.cache
+.tmp
+
+############################
+# Environment & Secrets
+############################
+.env
+.env.local
+.env.*.local
+
+############################
+# Git & Version Control
+############################
+.git
+.gitignore
+.gitattributes
+
+############################
+# Development Tools
+############################
+.husky
+.vscode
+.idea
+.cursor
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+############################
+# Documentation & Docs
+############################
+docs
+*.md
+README*
+
+############################
+# Docker (Don't need compose files or other Dockerfiles in image)
+############################
+docker-compose*.yml
+Dockerfile*
+.dockerignore
+
+############################
+# Testing & Coverage
+############################
+.nyc_output
+coverage
+*.lcov

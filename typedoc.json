@@ -1,0 +1,18 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "entryPointStrategy": "expand",
+  "tsconfig": "./tsconfig.typedoc.json",
+  "out": "docs",
+  "plugin": [],
+  "name": "Portfolio BE",
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeExternals": true,
+  "includeVersion": true,
+  "navigationLinks": {
+    "Swagger UI": "/documentation"
+  },
+  "skipErrorChecking": true
+}

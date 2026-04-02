@@ -1,0 +1,25 @@
+FROM node:20-slim
+
+RUN apt-get update && apt-get install -y \
+    libvips-dev \
+    python3 \
+    make \
+    g++ \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install --include=optional
+RUN npm install --os=linux --cpu=arm64 sharp
+
+COPY . .
+
+RUN mkdir -p /app/public && \
+    node -e "require('fs').writeFileSync('/app/public/favicon.png', Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==', 'base64'))" && \
+    ls -la /app/public/favicon.png
+
+EXPOSE 1330
+
+CMD ["npm", "run", "develop"]
