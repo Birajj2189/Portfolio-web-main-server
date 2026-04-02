@@ -29,6 +29,9 @@ COPY . .
 
 ENV NODE_ENV=production
 
+# Ensure public/ exists before build (it may not be committed to git)
+RUN mkdir -p public/uploads
+
 RUN npm run build
 
 # ─── Stage 3: Runner ──────────────────────────────────────────────────────────
@@ -58,7 +61,7 @@ COPY --from=builder --chown=strapi:strapi /app/package.json ./package.json
 COPY --from=builder --chown=strapi:strapi /app/src ./src
 COPY --from=builder --chown=strapi:strapi /app/config ./config
 
-# Static assets
+# Static assets (public/ is created in builder even if not in repo)
 COPY --from=builder --chown=strapi:strapi /app/public ./public
 
 # Seed data for bootstrap
