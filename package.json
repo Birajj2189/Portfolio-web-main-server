@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "node -e \"require('fs').mkdirSync('public/uploads',{recursive:true})\" && strapi start",
     "build": "strapi build",
     "deploy": "strapi build && strapi start",
     "strapi": "strapi",

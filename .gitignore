@@ -57,8 +57,9 @@ exports/
 apps/
 packages/
 
-# Uploads (local only, not part of repo)
-public/uploads/
+# Uploads — keep directory in git (.gitkeep); ignore uploaded files
+public/uploads/*
+!public/uploads/.gitkeep
 
 ############################
 # TypeDoc (auto-generated docs)

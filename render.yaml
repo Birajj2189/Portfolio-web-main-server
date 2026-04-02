@@ -6,7 +6,7 @@ services:
     region: oregon
     plan: free
     rootDir: .
-    buildCommand: npm install --include=optional --ignore-scripts && npm run build
+    buildCommand: mkdir -p public/uploads && rm -rf dist .cache && npm install --include=optional --ignore-scripts && npm run build
     startCommand: npm run start
     healthCheckPath: /_health
     envVars:
