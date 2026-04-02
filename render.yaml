@@ -18,7 +18,9 @@ services:
         value: 10000
       - key: DATABASE_CLIENT
         value: postgres
-      # Set these in the Render dashboard — do not commit secrets
+      # Prefer DATABASE_URL = Internal Database URL from your Render Postgres (port 5432).
+      # Remove DATABASE_HOST / DATABASE_PORT from the dashboard if you use DATABASE_URL.
+      # If you use split vars: never set DATABASE_PORT=5434 (that is local Docker only).
       - key: DATABASE_URL
         sync: false
       - key: APP_KEYS

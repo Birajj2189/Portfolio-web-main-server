@@ -1,9 +1,36 @@
 import path from 'path';
 
+/**
+ * Local Docker often maps Postgres as host:5434 → container:5432.
+ * On Render, managed Postgres always listens on 5432 — copying local
+ * DATABASE_PORT=5434 or a URL with :5434 breaks the deploy.
+ */
+function normalizeRenderPostgresPort(port: number): number {
+  if (process.env.RENDER === 'true' && port === 5434) {
+    return 5432;
+  }
+  return port;
+}
+
+function normalizeRenderDatabaseUrl(url: string | null): string | null {
+  if (!url || process.env.RENDER !== 'true') return url;
+  // postgresql://user:pass@host:5434/db → :5432
+  try {
+    const parsed = new URL(url);
+    if (parsed.port === '5434') {
+      parsed.port = '5432';
+      return parsed.toString();
+    }
+  } catch {
+    /* ignore malformed URLs */
+  }
+  return url;
+}
+
 export default ({ env }) => {
   const client = env('DATABASE_CLIENT', 'postgres');
 
-  const databaseUrl = env('DATABASE_URL', null);
+  const databaseUrl = normalizeRenderDatabaseUrl(env('DATABASE_URL', null));
 
   const connections = {
     postgres: {
@@ -15,7 +42,7 @@ export default ({ env }) => {
           }
         : {
             host: env('DATABASE_HOST', '127.0.0.1'),
-            port: env.int('DATABASE_PORT', 5432),
+            port: normalizeRenderPostgresPort(env.int('DATABASE_PORT', 5432)),
             database: env('DATABASE_NAME', 'strapi'),
             user: env('DATABASE_USERNAME', 'strapi'),
             password: env('DATABASE_PASSWORD', ''),
