@@ -49,22 +49,19 @@ ENV NODE_ENV=production
 RUN groupadd --system --gid 1001 strapi && \
     useradd --system --uid 1001 --gid strapi strapi
 
-# Compiled output
+# dist/ contains compiled config/, src/, and extensions/ — the only thing
+# Strapi production needs. Raw .ts source files must NOT be copied here
+# because Strapi will find .ts configs and refuse to load them.
 COPY --from=builder --chown=strapi:strapi /app/dist ./dist
 
 # Dependencies
 COPY --from=builder --chown=strapi:strapi /app/node_modules ./node_modules
 COPY --from=builder --chown=strapi:strapi /app/package.json ./package.json
 
-# Strapi reads content-type schemas and components from src/ at runtime
-# to auto-create/sync database tables on startup
-COPY --from=builder --chown=strapi:strapi /app/src ./src
-COPY --from=builder --chown=strapi:strapi /app/config ./config
-
-# Static assets (public/ is created in builder even if not in repo)
+# Static assets (public/ is guaranteed to exist because builder ran mkdir -p)
 COPY --from=builder --chown=strapi:strapi /app/public ./public
 
-# Seed data for bootstrap
+# Seed data for bootstrap hook in src/index.ts
 COPY --from=builder --chown=strapi:strapi /app/data ./data
 
 USER strapi
