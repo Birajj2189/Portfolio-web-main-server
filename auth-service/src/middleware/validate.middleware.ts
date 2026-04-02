@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { AnyZodObject, ZodError } from 'zod';
+import { ZodTypeAny, ZodError } from 'zod';
 
 /**
  * Express middleware factory that validates request data against a Zod schema.
@@ -8,7 +8,7 @@ import { AnyZodObject, ZodError } from 'zod';
  * @param schema - Zod object schema with optional body/query/params keys
  * @returns Express middleware that sends 400 on validation failure
  */
-export function validate(schema: AnyZodObject) {
+export function validate(schema: ZodTypeAny) {
   return async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       await schema.parseAsync({

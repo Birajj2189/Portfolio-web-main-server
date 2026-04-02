@@ -3,12 +3,13 @@ import { z } from 'zod';
 export const signupSchema = z.object({
   body: z.object({
     email: z
-      .string({ required_error: 'Email is required' })
+      .string()
+      .min(1, 'Email is required')
       .email('Invalid email format')
       .toLowerCase()
       .trim(),
     password: z
-      .string({ required_error: 'Password is required' })
+      .string()
       .min(8, 'Password must be at least 8 characters')
       .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
       .regex(/[0-9]/, 'Password must contain at least one number')
@@ -19,11 +20,12 @@ export const signupSchema = z.object({
 export const loginSchema = z.object({
   body: z.object({
     email: z
-      .string({ required_error: 'Email is required' })
+      .string()
+      .min(1, 'Email is required')
       .email('Invalid email format')
       .toLowerCase()
       .trim(),
-    password: z.string({ required_error: 'Password is required' }),
+    password: z.string().min(1, 'Password is required'),
   }),
 });
 
