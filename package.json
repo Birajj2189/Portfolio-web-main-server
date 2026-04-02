@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "develop": "strapi develop",
-    "start": "node -e \"require('fs').mkdirSync('public/uploads',{recursive:true})\" && strapi start",
+    "start": "node scripts/strapi-start.cjs",
     "build": "strapi build",
-    "deploy": "strapi build && strapi start",
+    "deploy": "strapi build && npm run start",
     "strapi": "strapi",
     "docs:generate": "typedoc",
     "prepare": "node -e \"const e=process.env; if(e.NODE_ENV==='production'||e.CI||e.RENDER==='true'||e.RENDER_SERVICE_ID||e.SKIP_HUSKY==='1') process.exit(0); require('child_process').execSync('husky',{stdio:'inherit'})\""
@@ -26,6 +26,8 @@
   "optionalDependencies": {
     "@img/sharp-darwin-arm64": "^0.33.5",
     "@img/sharp-darwin-x64": "^0.33.5",
+    "@img/sharp-libvips-linux-x64": "1.0.4",
+    "@img/sharp-linux-x64": "^0.33.5",
     "@img/sharp-linuxmusl-arm64": "^0.33.5",
     "@img/sharp-linuxmusl-x64": "^0.33.5"
   },
