@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --include=optional
+RUN npm install --include=optional
 
 # ─── Stage 2: Builder ─────────────────────────────────────────────────────────
 FROM node:20-slim AS builder
@@ -50,6 +50,7 @@ COPY --from=builder --chown=strapi:strapi /app/package.json ./package.json
 COPY --from=builder --chown=strapi:strapi /app/public ./public
 COPY --from=builder --chown=strapi:strapi /app/config ./config
 COPY --from=builder --chown=strapi:strapi /app/src ./src
+COPY --from=builder --chown=strapi:strapi /app/data ./data
 
 USER strapi
 
